@@ -1,4 +1,34 @@
 #quote-box {
     width: 400px;
     background-color: brown;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: break-word;
+}
+
+#text-box {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.75em;
+    overflow-wrap: break-word;
+}
+
+#text {
+    margin-left: 0.35em;
+}
+
+#author {
+    text-align: end;
+}
+
+#tweet-quote {
+    float: left;
+}
+
+#tumblr-quote {
+    float: left;
+}
+
+#new-quote {
+    float: right;
 }

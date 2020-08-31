@@ -1,9 +1,11 @@
 #quote-box {
-    width: 400px;
-    background-color: brown;
+    width: 550px;
+    background-color: white;
     display: flex;
     flex-direction: column;
     overflow-wrap: break-word;
+    padding: 40px 50px;
+    border-radius: 3px;
 }
 
 #text-box {
@@ -23,10 +25,19 @@
 
 #tweet-quote {
     float: left;
+    color: white;
+    background-color: black;
+    padding: 6px 12.5px;
+    border-radius: 3px;
 }
 
 #tumblr-quote {
     float: left;
+    margin-left: 0.3rem;
+    color: white;
+    background-color: black;
+    padding: 6px 15px;
+    border-radius: 3px;
 }
 
 #new-quote {

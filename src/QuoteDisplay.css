@@ -16,11 +16,14 @@
 }
 
 #text {
-    margin-left: 0.35em;
+    margin-left: 0.8rem;
+    font-family: sans-serif;
 }
 
 #author {
     text-align: end;
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
 }
 
 #tweet-quote {
@@ -29,6 +32,10 @@
     background-color: black;
     padding: 6px 12.5px;
     border-radius: 3px;
+}
+
+#tweet-quote:hover {
+    opacity: 0.85;
 }
 
 #tumblr-quote {
@@ -40,6 +47,21 @@
     border-radius: 3px;
 }
 
+#tumblr-quote:hover {
+    opacity: 0.85;
+}
+
 #new-quote {
     float: right;
+    border: none;
+    outline: none;
+    padding: 6px 16px;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    font-size: 0.95em;
+}
+
+#new-quote:hover {
+    opacity: 0.85;
 }

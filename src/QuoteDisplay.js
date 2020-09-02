@@ -7,7 +7,7 @@ class QuoteDisplay extends React.Component {
         this.updateQuote.bind(this)
     }
 
-    updateQuote(event) {
+    updateQuote() {
 
     }
 

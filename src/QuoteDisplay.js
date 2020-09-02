@@ -2,6 +2,15 @@ import React from 'react'
 import './QuoteDisplay.css'
 
 class QuoteDisplay extends React.Component {
+    constructor(props) {
+        super(props)
+        this.updateQuote.bind(this)
+    }
+
+    updateQuote(event) {
+
+    }
+
     render() {
         return (
             <div id='quote-box'>
@@ -17,7 +26,7 @@ class QuoteDisplay extends React.Component {
                     <a id='tumblr-quote' href='https://www.tumblr.com/widgets/share/tool' target='_blank' rel="noopener noreferrer">
                         <i className='fab fa-tumblr'></i>
                     </a>
-                    <button id='new-quote'>New quote</button>
+                    <button id='new-quote' onClick={this.updateQuote}>New quote</button>
                 </div>
             </div>
         )

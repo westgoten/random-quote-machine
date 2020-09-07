@@ -18,7 +18,13 @@ const quotesReducer = createReducer(initialState, {
         return newState
     },
     [CHANGE_QUOTE]: (state) => {
-        const newQuote = state.quoteList[getRandomInt(state.quoteList.length)]
+        let index = getRandomInt(state.quoteList.length)
+        let newQuote = state.quoteList[index]
+        if (JSON.stringify(newQuote) === JSON.stringify(state.currentQuote))
+            if (index + 1 < state.quoteList.length)
+                newQuote = state.quoteList[index+1]
+            else
+                newQuote = state.quoteList[index-1]
         return Object.assign({}, state, { currentQuote: newQuote })   
     }
 })

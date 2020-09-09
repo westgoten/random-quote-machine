@@ -1,3 +1,12 @@
+#wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.6s ease-in, background-color 0.6s ease-in;
+}
+
 #quote-box {
     width: 550px;
     background-color: white;
@@ -13,6 +22,7 @@
     font-weight: 500;
     font-size: 1.75em;
     overflow-wrap: break-word;
+    transition: opacity 0.6s ease-in;
 }
 
 #text {
@@ -24,6 +34,7 @@
     text-align: end;
     margin-top: 1.6rem;
     margin-bottom: 1.6rem;
+    transition: opacity 0.6s ease-in;
 }
 
 #tweet-quote {
@@ -32,6 +43,7 @@
     background-color: black;
     padding: 6px 12.5px;
     border-radius: 3px;
+    transition: background-color 0.6s ease-in;
 }
 
 #tweet-quote:hover {
@@ -45,6 +57,7 @@
     background-color: black;
     padding: 6px 15px;
     border-radius: 3px;
+    transition: background-color 0.6s ease-in;
 }
 
 #tumblr-quote:hover {
@@ -60,6 +73,7 @@
     color: white;
     border-radius: 3px;
     font-size: 0.95em;
+    transition: background-color 0.6s ease-in;
 }
 
 #new-quote:hover {

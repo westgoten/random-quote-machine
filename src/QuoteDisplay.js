@@ -12,35 +12,51 @@ class QuoteDisplay extends React.Component {
             opacity: 1
         }
         this.colors = ['red', 'green', 'blue']
+        this.quoteBox = React.createRef()
+
         this.updateQuote = this.updateQuote.bind(this)
+        this.onTextOpacityTransitionEnd = this.onTextOpacityTransitionEnd.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchQuotes().then(() => {
-            this.setState({ color: this.getRandomColor() })
+            this.setState({ 
+                color: this.getRandomColor(),
+                opacity: 0
+            })
         })
     }
 
     updateQuote() {
         this.props.changeQuote()
-        this.setState({ color: this.getRandomColor() })
+        this.setState({
+            color: this.getRandomColor(),
+            opacity: 0
+        })
     }
 
     getRandomColor() {
         return this.colors[getRandomInt(this.colors.length)]
     }
 
+    onTextOpacityTransitionEnd() {
+        this.setState({ opacity: 1 })
+        const quoteBoxNode = this.quoteBox.current
+        const text = quoteBoxNode.querySelectorAll('#text')[0]
+        const author = quoteBoxNode.querySelectorAll('#author')[0]
+        text.innerHTML = this.props.currentQuote.quote
+        author.innerHTML = "- " + this.props.currentQuote.author
+    }
+
     render() {
         return (
             <div id='wrapper' style={{ color: this.state.color, backgroundColor: this.state.color }}>
-                <div id='quote-box'>
-                    <div id='text-box' style={{ opacity: this.state.opacity }}>
+                <div id='quote-box' ref={this.quoteBox}>
+                    <div id='text-box' style={{ opacity: this.state.opacity }} onTransitionEnd={this.onTextOpacityTransitionEnd}>
                         <i className='fas fa-quote-left'></i>
-                        <span id='text'>{this.props.currentQuote.quote}</span>
+                        <span id='text'></span>
                     </div>
-                    <p id='author' style={{ opacity: this.state.opacity }}>
-                        - {this.props.currentQuote.author}
-                    </p>
+                    <p id='author' style={{ opacity: this.state.opacity }} onTransitionEnd={this.onTextOpacityTransitionEnd}>- </p>
                     <div id='buttons'>
                         <a id='tweet-quote' href='https://twitter.com/intent/tweet' target='_blank' 
                         rel="noopener noreferrer" style={{ backgroundColor: this.state.color }}>

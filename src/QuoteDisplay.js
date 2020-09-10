@@ -11,11 +11,14 @@ class QuoteDisplay extends React.Component {
             color: 'black',
             opacity: 1
         }
-        this.colors = ['red', 'green', 'blue']
+        this.colors = ['red', 'green', 'lightseagreen', 'darkgoldenrod', 'darkcyan', 'darkmagenta', 'dodgerblue', 
+        'darkslategray', 'coral', 'midnightblue', 'limegreen', 'mediumturquoise', 'darkolivegreen', 'darkblue']
         this.quoteBox = React.createRef()
 
         this.updateQuote = this.updateQuote.bind(this)
         this.onTextOpacityTransitionEnd = this.onTextOpacityTransitionEnd.bind(this)
+        this.setupTweetButtonLink = this.setupTweetButtonLink.bind(this)
+        this.setupTumblrButtonLink = this.setupTumblrButtonLink.bind(this)
     }
 
     componentDidMount() {
@@ -41,9 +44,13 @@ class QuoteDisplay extends React.Component {
 
     onTextOpacityTransitionEnd() {
         this.setState({ opacity: 1 })
+        this.setQuoteText()
+    }
+
+    setQuoteText() {
         const quoteBoxNode = this.quoteBox.current
-        const text = quoteBoxNode.querySelectorAll('#text')[0]
-        const author = quoteBoxNode.querySelectorAll('#author')[0]
+        const text = quoteBoxNode.querySelector('#text')
+        const author = quoteBoxNode.querySelector('#author')
         text.innerHTML = this.props.currentQuote.quote
         author.innerHTML = "- " + this.props.currentQuote.author
     }
@@ -58,20 +65,28 @@ class QuoteDisplay extends React.Component {
                     </div>
                     <p id='author' style={{ opacity: this.state.opacity }} onTransitionEnd={this.onTextOpacityTransitionEnd}>- </p>
                     <div id='buttons'>
-                        <a id='tweet-quote' href='https://twitter.com/intent/tweet' target='_blank' 
-                        rel="noopener noreferrer" style={{ backgroundColor: this.state.color }}>
+                        <a id='tweet-quote' href={this.setupTweetButtonLink()} title='Tweet this quote!' target='_blank' rel="noopener noreferrer" style={{ backgroundColor: this.state.color }}>
                             <i className='fab fa-twitter'></i>
                         </a>
-                        <a id='tumblr-quote' href='https://www.tumblr.com/widgets/share/tool' target='_blank' 
-                        rel="noopener noreferrer" style={{ backgroundColor: this.state.color }}>
+                        <a id='tumblr-quote' href={this.setupTumblrButtonLink()} title='Post this quote on tumblr!' target='_blank' rel="noopener noreferrer" style={{ backgroundColor: this.state.color }}>
                             <i className='fab fa-tumblr'></i>
                         </a>
-                        <button id='new-quote' onClick={this.updateQuote} 
-                        style={{ backgroundColor: this.state.color }}>New quote</button>
+                        <button id='new-quote' onClick={this.updateQuote} style={{ backgroundColor: this.state.color }}>New quote</button>
                     </div>
                 </div>
             </div>
         )
+    }
+
+    setupTweetButtonLink() {
+        return 'https://twitter.com/intent/tweet?hashtags=quotes&text=' 
+        + encodeURIComponent('"' + this.props.currentQuote.quote + '" - ' + this.props.currentQuote.author)
+    }
+
+    setupTumblrButtonLink() {
+        return `https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes
+&caption=${encodeURIComponent(this.props.currentQuote.author)}&content=${this.props.currentQuote.quote}
+&canonicalUrl=${encodeURIComponent('https://www.google.com')}`
     }
 }
 

@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.5958cb39.chunk.css",
-    "main.js": "/static/js/main.d561a267.chunk.js",
-    "main.js.map": "/static/js/main.d561a267.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
-    "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
-    "static/css/2.c8887149.chunk.css": "/static/css/2.c8887149.chunk.css",
-    "static/js/2.003bbd99.chunk.js": "/static/js/2.003bbd99.chunk.js",
-    "static/js/2.003bbd99.chunk.js.map": "/static/js/2.003bbd99.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.d9be1f1be999be8aa7d711d78503324d.js": "/precache-manifest.d9be1f1be999be8aa7d711d78503324d.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.c8887149.chunk.css.map": "/static/css/2.c8887149.chunk.css.map",
-    "static/css/main.5958cb39.chunk.css.map": "/static/css/main.5958cb39.chunk.css.map",
-    "static/js/2.003bbd99.chunk.js.LICENSE.txt": "/static/js/2.003bbd99.chunk.js.LICENSE.txt",
-    "static/media/all.min.css": "/static/media/fa-solid-900.ee09ad75.woff"
+    "main.css": "/random-quote-machine/static/css/main.5958cb39.chunk.css",
+    "main.js": "/random-quote-machine/static/js/main.00ca8e16.chunk.js",
+    "main.js.map": "/random-quote-machine/static/js/main.00ca8e16.chunk.js.map",
+    "runtime-main.js": "/random-quote-machine/static/js/runtime-main.98505e8c.js",
+    "runtime-main.js.map": "/random-quote-machine/static/js/runtime-main.98505e8c.js.map",
+    "static/css/2.bb1c1f3a.chunk.css": "/random-quote-machine/static/css/2.bb1c1f3a.chunk.css",
+    "static/js/2.003bbd99.chunk.js": "/random-quote-machine/static/js/2.003bbd99.chunk.js",
+    "static/js/2.003bbd99.chunk.js.map": "/random-quote-machine/static/js/2.003bbd99.chunk.js.map",
+    "index.html": "/random-quote-machine/index.html",
+    "precache-manifest.466626cd1b6703eda659c289f88f0679.js": "/random-quote-machine/precache-manifest.466626cd1b6703eda659c289f88f0679.js",
+    "service-worker.js": "/random-quote-machine/service-worker.js",
+    "static/css/2.bb1c1f3a.chunk.css.map": "/random-quote-machine/static/css/2.bb1c1f3a.chunk.css.map",
+    "static/css/main.5958cb39.chunk.css.map": "/random-quote-machine/static/css/main.5958cb39.chunk.css.map",
+    "static/js/2.003bbd99.chunk.js.LICENSE.txt": "/random-quote-machine/static/js/2.003bbd99.chunk.js.LICENSE.txt",
+    "static/media/all.min.css": "/random-quote-machine/static/media/fa-solid-900.ee09ad75.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.83c3e0c4.js",
-    "static/css/2.c8887149.chunk.css",
+    "static/js/runtime-main.98505e8c.js",
+    "static/css/2.bb1c1f3a.chunk.css",
     "static/js/2.003bbd99.chunk.js",
     "static/css/main.5958cb39.chunk.css",
-    "static/js/main.d561a267.chunk.js"
+    "static/js/main.00ca8e16.chunk.js"
   ]
 }
